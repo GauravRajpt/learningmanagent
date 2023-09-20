@@ -1,0 +1,91 @@
+.heading{
+    color: #000;
+font-family: Inter;
+font-size: 26.165px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.paragraph{
+    color: var(--Secondary-text, #494949);
+text-align: center;
+font-family: Inter;
+font-size: 17.345px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    color: var(--Secondary-text, #494949);
+text-align: center;
+font-family: Inter;
+font-size: 17.345px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.h1vh{
+    height: 100vh;
+}
+
+.inputText{
+    display: flex;
+width: 538.5px;
+height: 75px;
+padding: 27px 0px 26px 43.5px;
+align-items: center;
+flex-shrink: 0;
+border: 1px solid #000;
+border-radius: 0;
+}
+
+.btn{
+    color: #FFF;
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+display: inline-flex;
+padding: 14px 36px 13px 36px;
+justify-content: center;
+align-items: center;
+border-radius: 0;
+background: var(--Gradient-Blue, linear-gradient(263deg, rgba(10, 134, 185, 0.68) -45.81%, #4FA3C3 -8.24%, #1585AB 140.88%, #0C709B 273.75%));
+}
+
+.terms{
+    color: #000;
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.line{
+    width: 240.005px;
+height: 1.5px;
+background: #000;
+display: inline-block;
+}
+
+.box{
+   
+    width: 80%;
+display: flex;
+align-items: center;
+justify-content:center;
+gap:10px;
+height: 75px;
+margin-bottom: 24px;
+border: 1px solid #000;
+background: var(--button, #F9F9F9);
+}
+
+.googlesignup{
+    color: #000;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
