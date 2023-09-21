@@ -4,9 +4,21 @@ import signupman from "../../images/signup.png"
 import styles from "./SignUp.module.css"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useForm } from 'react-hook-form';
 
 
 const SignUp = () => {
+
+// ---------------------------------destructuring hooks ----------------------------------
+
+const { register, handleSubmit,formState:{errors}}= useForm();
+
+// --------------------------------methods------------------------------------------------
+const onSubmit =(data)=>{
+  console.log(data);
+}
+
+
   return (
    <Container>
     <Row className={` d-flex justify-content-evenly align-items-center`}>
@@ -15,16 +27,18 @@ const SignUp = () => {
     <h1 className={styles.heading}>Welcome to Learning Management System</h1>
     <p className={styles.paragraph}>Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br></br>
      vulputate libero et velit interdum, ac aliquet odio mattis</p>
-         <Form>
+         <Form onSubmit={handleSubmit(onSubmit)} >
       <Form.Group className="mb-3" controlId="formBasicEmail">
         
-        <Form.Control className={styles.inputText} type="email" placeholder="Enter email" />
-        
+        <Form.Control {...register("name",{required:true, pattern: /^\S+@\S+$/i})} name="email" className={styles.inputText} type="email" placeholder="Enter email" />
+       
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         
-        <Form.Control className={styles.inputText} type="password" placeholder="Password" />
+        <Form.Control {...register("password",{required:true, pattern:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+      })} className={styles.inputText} type="password" name="password" placeholder="Password" />
+      {errors.password && <h3 role="alert">please type strong password</h3>}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check className={styles.terms} type="checkbox" label="I agree to Terms and conditions" />
@@ -35,7 +49,7 @@ const SignUp = () => {
       </Button>
        </div>
        <div>
-       <p className='d-flex align-items-center gap-1'><div className={styles.line}></div> OR <div className={styles.line}></div></p>
+       <div className='d-flex align-items-center gap-1'><h2 className={styles.line}></h2> OR <h2 className={styles.line}></h2></div>
        </div>
        <div className='d-flex flex-column'>
        <div className={`${styles.box} d-flex gap-2 jusify-content-center`}>
